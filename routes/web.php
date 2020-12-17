@@ -13,6 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+Route::group(['prefix' => 'Map', 'namespace' => 'App\Http\Controllers\Map'], function() {
+    Route::get('/', 'AddressController@getAddress');
 });
