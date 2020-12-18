@@ -19,4 +19,5 @@ use Illuminate\Support\Facades\Route;
 
 Route::group(['prefix' => 'Map', 'namespace' => 'App\Http\Controllers\Map'], function() {
     Route::get('/', 'AddressController@getAddress');
+    Route::get('/db-test', 'AddressController@getAddressByDB');
 });
