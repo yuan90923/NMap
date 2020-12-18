@@ -1,0 +1,184 @@
+## 取得維護設定列表 [/Map/db-test{?address}]
+
+### GET
+
++ Parameters
+    + `address` : `aa市bb區cc路23號` (string, regular) - 地址
+
++ Request (application/x-www-form-urlencoded)
+    + Headers
+
++ Response 200 (application/json)
+    + Body
+
+            {
+                "code":"200",
+                "status":"OK",
+                "details":[
+                    [
+                        {
+                            "address_components":[
+                            {
+                                "long_name":"Ren'ai Road",
+                                "short_name":"Ren'ai Road",
+                                "types":[
+                                    "route"
+                                ]
+                            },
+                            {
+                                "long_name":"Yonghe District",
+                                "short_name":"Yonghe District",
+                                "types":[
+                                    "administrative_area_level_3",
+                                    "political"
+                                ]
+                            },
+                            {
+                                "long_name":"New Taipei City",
+                                "short_name":"New Taipei City",
+                                "types":[
+                                    "administrative_area_level_1",
+                                    "political"
+                                ]
+                            },
+                            {
+                                "long_name":"Taiwan",
+                                "short_name":"TW",
+                                "types":[
+                                    "country",
+                                    "political"
+                                ]
+                            },
+                            {
+                                "long_name":"234",
+                                "short_name":"234",
+                                "types":[
+                                    "postal_code"
+                                ]
+                            }
+                            ],
+                            "formatted_address":"Ren'ai Road, Yonghe District, New Taipei City, Taiwan 234",
+                            "geometry":{
+                            "bounds":{
+                                "northeast":{
+                                    "lat":25.0146373,
+                                    "lng":121.5155891
+                                },
+                                "southwest":{
+                                    "lat":25.0068677,
+                                    "lng":121.502562
+                                }
+                            },
+                            "location":{
+                                "lat":25.0114248,
+                                "lng":121.5081698
+                            },
+                            "location_type":"GEOMETRIC_CENTER",
+                            "viewport":{
+                                "northeast":{
+                                    "lat":25.0146373,
+                                    "lng":121.5155891
+                                },
+                                "southwest":{
+                                    "lat":25.0068677,
+                                    "lng":121.502562
+                                }
+                            }
+                            },
+                            "partial_match":true,
+                            "place_id":"ChIJf8lHg8OpQjQR3zoEt1y4dl8",
+                            "types":[
+                            "route"
+                            ]
+                        }
+                    ]
+                ],
+                "replyTime":"2020-12-18 05:24:07"
+            }
+
++ Response 400 (application/json)
+    + Body
+
+            {
+                "code": "400",
+                "status": "INVALID_ARGUMENT",
+                "details": [
+                    {
+                        "target": "發生錯誤的參數名稱",
+                        "message": [
+                            "錯誤訊息"
+                        ]
+                    }
+                    ...
+                ],
+                "replyTime": "2020-12-18 05:24:07"
+            }
+
+
+## 取得維護設定列表 [/Map/db-test{?address}]
+
+### GET
+
++ Parameters
+    + `address` : `aa市bb區cc路23號` (string, regular) - 地址
+
++ Request (application/x-www-form-urlencoded)
+    + Headers
+
++ Response 200 (application/json)
+    + Body
+
+            {
+                "code": "200",
+                "status": "OK",
+                "details": {
+                    "map_data": {
+                        "id": 2,
+                        "zip": 106,
+                        "city": "台北市",
+                        "area": "大安區",
+                        "road": "仁愛路四段",
+                        "lane": null,
+                        "alley": null,
+                        "no": "29-2",
+                        "floor": null,
+                        "address": null,
+                        "filename": null,
+                        "latitude": null,
+                        "lontitue": null,
+                        "full_address": "台北市大安區仁愛路四段29-2號",
+                    }
+                },
+                "replyTime": "2020-12-18 05:24:07"
+            }
+
++ Response 400 (application/json)
+    + Body
+
+            {
+                "code": "400",
+                "status": "INVALID_ARGUMENT",
+                "details": [
+                    {
+                        "target": "發生錯誤的參數名稱",
+                        "message": [
+                            "錯誤訊息"
+                        ]
+                    }
+                    ...
+                ],
+                "replyTime": "2020-12-18 05:24:07"
+            }
+
++ Response 404 (application/json)
+    + Body
+
+            {
+                "code": "404",
+                "status": "NOT_FOUND",
+                "details": {
+                    "target": "AddressData",
+                    "message": "查無資料"
+                },
+                "replyTime": "2020-12-18 05:24:07"
+            }
